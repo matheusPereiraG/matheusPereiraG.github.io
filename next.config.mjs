@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
     output: 'export',
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/matheuspereirag.github.io' : '',
+    assetPrefix: isProd ? '/matheusPereiraG.github.io/' : '',
+    basePath: isProd ? '/matheusPereiraG.github.io' : '',
 };
 
 export default nextConfig;
