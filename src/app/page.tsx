@@ -14,7 +14,7 @@ export default function Home() {
         </div>
         </aside>
 
-        <main className="p-20">
+        <main className="p-20 ml-2">
         <section id="about">
             <h1>About</h1>
             <p>
