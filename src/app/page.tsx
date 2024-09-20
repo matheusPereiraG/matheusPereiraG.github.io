@@ -6,15 +6,17 @@ import HomeTabs from "./components/home-tabs";
 export default function Home() {
   return (
     <>
-      <Header></Header>
-      <div className="h-screen px-16">
-        <div className="lg:fixed lg:w-1/4">
+      <div className="flex">
+        <aside className="h-screen sticky top-0 p-20">
+        <div className="flex flex-col">
           <PersonalHeader />
           <HomeTabs className="mt-16 space-y-4" />
         </div>
+        </aside>
 
-        <div className="lg:ml-1/4 lg:w-3/4">
-          <section id="about">
+        <main className="p-20">
+        <section id="about">
+            <h1>About</h1>
             <p>
               he standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
               dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -73,6 +75,7 @@ export default function Home() {
           </section>
 
           <section id="experience">
+          <h1>XP</h1>
             <p>
               he standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
               dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -131,6 +134,7 @@ export default function Home() {
           </section>
 
           <section id="projects">
+          <h1>Projects</h1>
             <p>
               he standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
               dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -187,12 +191,9 @@ export default function Home() {
               perferendis doloribus asperiores repellat."
             </p>
           </section>
-        </div>
+        </main>
       </div>
-
-      <div>
-        <p>About me</p>
-      </div>
+    
 
       {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
