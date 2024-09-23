@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgba: 29, 78, 216, 0.15;
-  --background-end-rgba: 29, 78, 216, 0.15;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 226 232 240; /* White for dark mode */
-  }
-}
-body {
-  color: rgb(var(--foreground-rgb)); /* Foreground color based on the variable */
-  background: #0F182A
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

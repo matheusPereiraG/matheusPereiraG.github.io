@@ -5,6 +5,8 @@ import PersonalHeader from "./components/personal-info-header";
 import HomeTabs, { HomeTab, HomeTabsProps } from "./components/home-tabs";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Card from "./components/card";
+import Chip from "./components/chip";
 
 export default function Home() {
   const homeTabs: HomeTab[] = [
@@ -28,13 +30,15 @@ export default function Home() {
     },
   ];
 
-  const [tabs, setTabs] = useState(homeTabs)
+  const [tabs, setTabs] = useState(homeTabs);
 
   const updateActiveTab = (id: string) => {
-    setTabs(tabs.map(tab => ({
-      ...tab,
-      isSelected: tab.id === id
-    })));
+    setTabs(
+      tabs.map((tab) => ({
+        ...tab,
+        isSelected: tab.id === id,
+      }))
+    );
   };
 
   // Set up `useInView` for each section
@@ -63,134 +67,76 @@ export default function Home() {
   return (
     <>
       <div className="flex">
-        <aside className="h-screen sticky top-0 p-20 mr-10">
+        <aside className="h-screen sticky top-0 w-1/2 p-20">
           <div className="flex flex-col">
             <PersonalHeader />
-            <HomeTabs
-              className="mt-16 space-y-4"
-              homeTabs={tabs}
-              onClick={(id: string) => {}}
-            />
+            <HomeTabs className="mt-16 space-y-4" homeTabs={tabs} />
           </div>
         </aside>
 
-        <main className="p-20">
-          <section id="about" ref={aboutRef}>
-            <h1>About</h1>
-            <p>
-              he standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum." Section 1.10.32 of
-              "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed
-              ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-              vel eum iure reprehenderit qui in ea voluptate velit esse quam
-              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-              voluptas nulla pariatur?" 1914 translation by H. Rackham "But I
-              must explain to you how all this mistaken idea of denouncing
-              pleasure and praising pain was born and I will give you a complete
-              account of the system, and expound the actual teachings of the
-              great explorer of the truth, the master-builder of human
-              happiness. No one rejects, dislikes, or avoids pleasure itself,
-              because it is pleasure, but because those who do not know how to
-              pursue pleasure rationally encounter consequences that are
-              extremely painful. Nor again is there anyone who loves or pursues
-              or desires to obtain pain of itself, because it is pain, but
-              because occasionally circumstances occur in which toil and pain
-              can procure him some great pleasure. To take a trivial example,
-              which of us ever undertakes laborious physical exercise, except to
-              obtain some advantage from it? But who has any right to find fault
-              with a man who chooses to enjoy a pleasure that has no annoying
-              consequences, or one who avoids a pain that produces no resultant
-              pleasure?" Section 1.10.33 of "de Finibus Bonorum et Malorum",
-              written by Cicero in 45 BC "At vero eos et accusamus et iusto odio
-              dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-              atque corrupti quos dolores et quas molestias excepturi sint
-              occaecati cupiditate non provident, similique sunt in culpa qui
-              officia deserunt mollitia animi, id est laborum et dolorum fuga.
-              Et harum quidem rerum facilis est et expedita distinctio. Nam
-              libero tempore, cum soluta nobis est eligendi optio cumque nihil
-              impedit quo minus id quod maxime placeat facere possimus, omnis
-              voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-              quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-              eveniet ut et voluptates repudiandae sint et molestiae non
-              recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut
-              aut reiciendis voluptatibus maiores alias consequatur aut
-              perferendis doloribus asperiores repellat." n
+        <main className="w-1/2 pr-20 pt-20 pb-20">
+          <section id="about" ref={aboutRef} className="mb-20">
+            <p className="font-thin text-md">
+              Welcome! I’m Matheus Gonçalves, a software engineer with 3 years
+              of experience. My current focus is{" "}
+              <strong className="font-bold">mobile development</strong>, but I’m
+              always eager to explore new technologies and concepts. With a
+              strong attention to detail, I prioritize delivering quality
+              solutions that satisfy clients while collaborating closely with my
+              team to achieve this goal. Over the years, I’ve worked on projects
+              in both the banking and healthcare sectors, and I’m excited to
+              continue developing impactful solutions, regardless of the
+              industry. On my free time i like to play football, socialize with
+              my friends, hang out with my girlfriend and develop some new
+              projects. Stick around, explore the page and if you have a cool
+              project that i can contribute hit me up on my socials.
             </p>
           </section>
 
           <section id="experience" ref={experienceRef}>
-            <h1>XP</h1>
-            <p>
-              he standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum." Section 1.10.32 of
-              "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed
-              ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-              vel eum iure reprehenderit qui in ea voluptate velit esse quam
-              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-              voluptas nulla pariatur?" 1914 translation by H. Rackham "But I
-              must explain to you how all this mistaken idea of denouncing
-              pleasure and praising pain was born and I will give you a complete
-              account of the system, and expound the actual teachings of the
-              great explorer of the truth, the master-builder of human
-              happiness. No one rejects, dislikes, or avoids pleasure itself,
-              because it is pleasure, but because those who do not know how to
-              pursue pleasure rationally encounter consequences that are
-              extremely painful. Nor again is there anyone who loves or pursues
-              or desires to obtain pain of itself, because it is pain, but
-              because occasionally circumstances occur in which toil and pain
-              can procure him some great pleasure. To take a trivial example,
-              which of us ever undertakes laborious physical exercise, except to
-              obtain some advantage from it? But who has any right to find fault
-              with a man who chooses to enjoy a pleasure that has no annoying
-              consequences, or one who avoids a pain that produces no resultant
-              pleasure?" Section 1.10.33 of "de Finibus Bonorum et Malorum",
-              written by Cicero in 45 BC "At vero eos et accusamus et iusto odio
-              dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-              atque corrupti quos dolores et quas molestias excepturi sint
-              occaecati cupiditate non provident, similique sunt in culpa qui
-              officia deserunt mollitia animi, id est laborum et dolorum fuga.
-              Et harum quidem rerum facilis est et expedita distinctio. Nam
-              libero tempore, cum soluta nobis est eligendi optio cumque nihil
-              impedit quo minus id quod maxime placeat facere possimus, omnis
-              voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-              quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-              eveniet ut et voluptates repudiandae sint et molestiae non
-              recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut
-              aut reiciendis voluptatibus maiores alias consequatur aut
-              perferendis doloribus asperiores repellat."
-            </p>
+            <Card className="flex p-4 group">
+              <div className="mr-10">
+                <p className="font-medium uppercase tracking-wide text-sm">2024 — Present</p>
+                <a className="font-thin hover:text-cyan-500" href="https://www.kenbi.de/">Kenbi</a>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-thin text-lg group-hover:text-cyan-500">Mid Software Engineer</p>
+                <p className="font-thin text-sm mt-4">Started developing a new healthcare application with all the latest android technologies including jetpack compose.</p>
+                <div className="flex mt-4 space-x-2">
+                    <Chip name="Android" />
+                    <Chip name="Compose" />
+                    <Chip name="MVVM" />
+                    <Chip name="MVI" />
+                    <Chip name="Healthcare" />
+                </div>
+              </div>
+            </Card>
+
+            <Card className="flex p-4 group mt-10">
+              <div className="mr-10">
+                <p className="font-medium uppercase tracking-wide text-sm">2024 — Present</p>
+                <a className="font-thin hover:text-cyan-500" href="https://www.kenbi.de/">Kenbi</a>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-thin text-lg group-hover:text-cyan-500">Mid Software Engineer</p>
+                <p className="font-thin text-sm mt-4">Started developing a new healthcare application with all the latest android technologies including jetpack compose.</p>
+              </div>
+            </Card>
+
+
+            <Card className="flex p-4 group mt-10">
+              <div className="mr-10">
+                <p className="font-medium uppercase tracking-wide text-sm">2024 — Present</p>
+                <a className="font-thin hover:text-cyan-500" href="https://www.kenbi.de/">Kenbi</a>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-thin text-lg group-hover:text-cyan-500">Mid Software Engineer</p>
+                <p className="font-thin text-sm mt-4">Started developing a new healthcare application with all the latest android technologies including jetpack compose.</p>
+              </div>
+            </Card>
           </section>
 
           <section id="projects" ref={projectsRef}>
