@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "./components/header";
 import HomeTabs, { HomeTab, HomeTabsProps } from "./components/home-tabs";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -55,15 +54,15 @@ export default function Home() {
 
   return (
     <>
-      <div className="grid lg:grid-cols-2 lg:justify-center">
-        <div className="flex flex-col pt-10 w-full px-4 lg:w-auto lg:sticky lg:top-0 lg:block lg:h-screen lg:pt-20">
+      <div className="grid lg:grid-cols-2">
+        <div className="flex flex-col pt-10 w-full px-4 lg:w-auto lg:sticky lg:top-0 lg:block lg:h-screen lg:pt-20 items-center">
           <div className="lg:max-w-md lg:mx-auto">
             <ProfilePicture className="mb-4" />
-            <h1 className="font-medium text-3xl tracking-tight text-slate-20">
+            <h1 className="font-medium text-3xl tracking-tight text-slate-20 w-max">
               Matheus Gonçalves
             </h1>
-            <h2 className="mt-3 font-light text-xl">Software Engineer</h2>
-            <p className="mt-4 font-thin">
+            <h2 className="mt-3 font-light text-xl w-max">Software Engineer</h2>
+            <p className="mt-4 font-thin w-max">
               Mobile engineer with 3 years of experience
             </p>
             <HomeTabs className="mt-16" homeTabs={tabs} />

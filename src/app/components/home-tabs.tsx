@@ -12,7 +12,7 @@ export type HomeTabsProps = {
 
 export default function HomeTabs(props: HomeTabsProps) {
     return (
-      <nav className={`hidden lg:block ${props.className}`}>
+      <nav className={`hidden lg:block w-max ${props.className}`}>
         <ul className="space-y-4">
           {props.homeTabs.map((tab) => (
             <li key={tab.name} className="w-max">

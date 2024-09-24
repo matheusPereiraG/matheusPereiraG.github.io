@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profilePic from '/public/profile_pic.png';
+import profilePic from '/public/profile_pic.jpg';
 
 type ProfilePictureType = {
   className?: string;
@@ -17,4 +17,3 @@ export default function ProfilePicture({ className }: ProfilePictureType) {
       </div>
     );
   }
-//relative inline-block
