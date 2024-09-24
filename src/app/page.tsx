@@ -9,6 +9,7 @@ import ShareIcon from "./components/share-icon";
 import ProfilePicture from "./components/profile-pic";
 import LinkedinIcon from "./components/linkedin-icon";
 import GithubIcon from "./components/github-icon";
+import DownloadCvBtn from "./components/download-cv-btn";
 
 export default function Home() {
   const homeTabs: HomeTab[] = [
@@ -57,7 +58,7 @@ export default function Home() {
   return (
     <>
       <div className="grid lg:grid-cols-2">
-        <div className="flex flex-col pt-10 w-full px-4 lg:w-auto lg:sticky lg:top-0 lg:h-screen lg:pt-20 items-center lg:justify-between">
+        <div className="flex flex-col pt-10 w-full px-4 lg:w-auto lg:sticky lg:top-0 h-screen lg:pt-10 items-center lg:justify-between">
           <div className="flex flex-col lg:max-w-md lg:mx-auto items-center lg:flex-1">
             <ProfilePicture className="mb-4" />
             <h1 className="font-medium text-3xl tracking-tight text-slate-20 w-max mt-10">
@@ -67,7 +68,8 @@ export default function Home() {
             <p className="mt-4 font-thin w-max">
               Mobile engineer with 3 years of experience
             </p>
-            <HomeTabs className="mt-16" homeTabs={tabs} />
+            <DownloadCvBtn className="mt-4" />
+            <HomeTabs className="mt-4" homeTabs={tabs} />
           </div>
 
           <div className="flex flex-wrap space-x-6 mt-6 lg:max-w-md lg:mx-auto lg:mb-20">
@@ -80,7 +82,7 @@ export default function Home() {
           </div>
         </div>
 
-        <main className="flex flex-col mt-20 w-full px-4 lg:w-auto xl:pr-20">
+        <main className="flex flex-col mt-10 w-full px-4 lg:w-auto xl:pr-20">
           <section id="about" ref={aboutRef} className="mb-20">
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
               <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
