@@ -67,11 +67,10 @@ export default function Home() {
             <p className="mt-4 font-thin w-max">
               Mobile engineer with 3 years of experience
             </p>
-            {/*  */}
             <HomeTabs className="mt-16" homeTabs={tabs} />
           </div>
 
-          <div className="flex flex-wrap space-x-6 mt-6 lg:max-w-md lg:mx-auto lg:p-20">
+          <div className="flex flex-wrap space-x-6 mt-6 lg:max-w-md lg:mx-auto lg:mb-20">
             <a className="group" href="https://www.linkedin.com/in/matheus-pereirag/">
               <LinkedinIcon className="fill-slate-500 stroke-slate-800 h-10 w-10 group-hover:fill-slate-100" />
             </a>
