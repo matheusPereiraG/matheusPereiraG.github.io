@@ -1,12 +1,12 @@
 "use client";
 
 import Header from "./components/header";
-import PersonalHeader from "./components/personal-info-header";
 import HomeTabs, { HomeTab, HomeTabsProps } from "./components/home-tabs";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Card from "./components/card";
 import Chip from "./components/chip";
+import ShareIcon from "./components/share-icon";
 
 export default function Home() {
   const homeTabs: HomeTab[] = [
@@ -66,15 +66,21 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex">
-        <aside className="h-screen sticky top-0 w-1/2 p-20">
-          <div className="flex flex-col">
-            <PersonalHeader />
-            <HomeTabs className="mt-16 space-y-4" homeTabs={tabs} />
+      <div className="grid lg:grid-cols-2 lg:justify-center">
+        <div className="flex flex-col pt-10 w-full px-4 lg:w-auto lg:sticky lg:top-0 lg:block lg:h-screen">
+          <div className="lg:max-w-md lg:mx-auto">
+            <h1 className="font-medium text-3xl tracking-tight text-slate-20">
+              Matheus Gonçalves
+            </h1>
+            <h2 className="mt-3 font-light text-xl">Software Engineer</h2>
+            <p className="mt-4 font-thin">
+              Mobile engineer with 3 years of experience
+            </p>
+            <HomeTabs className="mt-16" homeTabs={tabs} />
           </div>
-        </aside>
+        </div>
 
-        <main className="w-1/2 pr-20 pt-20 pb-20">
+        <main className="flex flex-col mt-20 w-full px-4 lg:w-auto">
           <section id="about" ref={aboutRef} className="mb-20">
             <p className="font-thin text-md">
               Welcome! I’m Matheus Gonçalves, a software engineer with 3 years
@@ -94,47 +100,140 @@ export default function Home() {
           </section>
 
           <section id="experience" ref={experienceRef}>
-            <Card className="flex p-4 group">
-              <div className="mr-10">
-                <p className="font-medium uppercase tracking-wide text-sm">2024 — Present</p>
-                <a className="font-thin hover:text-cyan-500" href="https://www.kenbi.de/">Kenbi</a>
+            <Card className="grid group p-4">
+              <div className="">
+                <p className="font-medium uppercase tracking-wide text-sm">
+                  Nov 2023 — Present
+                </p>
+                <a
+                  className="font-thin hover:text-cyan-500 flex items-center w-max"
+                  href="https://www.kenbi.de/"
+                >
+                  <p>Kenbi</p>
+                  <ShareIcon />
+                </a>
               </div>
 
               <div className="flex flex-col">
-                <p className="font-thin text-lg group-hover:text-cyan-500">Mid Software Engineer</p>
-                <p className="font-thin text-sm mt-4">Started developing a new healthcare application with all the latest android technologies including jetpack compose.</p>
-                <div className="flex mt-4 space-x-2">
-                    <Chip name="Android" />
-                    <Chip name="Compose" />
-                    <Chip name="MVVM" />
-                    <Chip name="MVI" />
-                    <Chip name="Healthcare" />
+                <p className="font-thin text-lg group-hover:text-cyan-500">
+                  Mid Software Engineer
+                </p>
+                <p className="font-thin text-sm mt-4">
+                  Started developing a new healthcare application with all the
+                  latest android technologies including jetpack compose.
+                </p>
+                <div className="flex flex-wrap mt-4 ">
+                  <Chip name="Kotlin" className="m-2" />
+                  <Chip name="Android" className="m-2" />
+                  <Chip name="Compose" className="m-2" />
+                  <Chip name="MVVM" className="m-2" />
+                  <Chip name="MVI" className="m-2" />
+                  <Chip name="Healthcare" className="m-2" />
                 </div>
               </div>
             </Card>
 
-            <Card className="flex p-4 group mt-10">
-              <div className="mr-10">
-                <p className="font-medium uppercase tracking-wide text-sm">2024 — Present</p>
-                <a className="font-thin hover:text-cyan-500" href="https://www.kenbi.de/">Kenbi</a>
+            <Card className="grid group p-4">
+              <div className="">
+                <p className="font-medium uppercase tracking-wide text-sm">
+                  Nov 2022 — Nov 2023
+                </p>
+                <a
+                  className="font-thin hover:text-cyan-500 flex items-center w-max"
+                  href="https://www.kenbi.de/"
+                >
+                  <p>Kenbi</p>
+                  <ShareIcon />
+                </a>
               </div>
 
               <div className="flex flex-col">
-                <p className="font-thin text-lg group-hover:text-cyan-500">Mid Software Engineer</p>
-                <p className="font-thin text-sm mt-4">Started developing a new healthcare application with all the latest android technologies including jetpack compose.</p>
+                <p className="font-thin text-lg group-hover:text-cyan-500">
+                  Software Engineer II
+                </p>
+                <p className="font-thin text-sm mt-4">
+                  Worked and maintained an health care application capable of
+                  assisting care assist workers. With 500 active users we
+                  implemented features like:
+                </p>
+                <ul className="list-disc font-thin text-sm ml-4">
+                  <li>Message chat for exchanging patient information</li>
+                  <li>Worker time tracking using graphs</li>
+                </ul>
+                <div className="flex flex-wrap mt-4 ">
+                  <Chip name="Kotlin" className="m-2" />
+                  <Chip name="Android" className="m-2" />
+                  <Chip name="Compose" className="m-2" />
+                  <Chip name="MVVM" className="m-2" />
+                  <Chip name="Healthcare" className="m-2" />
+                </div>
               </div>
             </Card>
 
-
-            <Card className="flex p-4 group mt-10">
-              <div className="mr-10">
-                <p className="font-medium uppercase tracking-wide text-sm">2024 — Present</p>
-                <a className="font-thin hover:text-cyan-500" href="https://www.kenbi.de/">Kenbi</a>
+            <Card className="grid group p-4">
+              <div className="">
+                <p className="font-medium uppercase tracking-wide text-sm">
+                  Jan 2022 — Nov 2022
+                </p>
+                <a
+                  className="font-thin hover:text-cyan-500 flex items-center w-max"
+                  href="https://www.itsector.pt/"
+                >
+                  <p>IT Sector</p>
+                  <ShareIcon />
+                </a>
               </div>
 
               <div className="flex flex-col">
-                <p className="font-thin text-lg group-hover:text-cyan-500">Mid Software Engineer</p>
-                <p className="font-thin text-sm mt-4">Started developing a new healthcare application with all the latest android technologies including jetpack compose.</p>
+                <p className="font-thin text-lg group-hover:text-cyan-500">
+                  IS Consultant
+                </p>
+                <p className="font-thin text-sm mt-4">
+                  As my first professional experience i was able to fix
+                  unexpected behaviour on a matured banking app targetting a big
+                  bank in Canada. Next thing i know i was working on a brand new
+                  solution for onboarding new debit and credit card customers.
+                </p>
+                <div className="flex flex-wrap mt-4 ">
+                  <Chip name="Kotlin" className="m-2" />
+                  <Chip name="Java" className="m-2" />
+                  <Chip name="Android" className="m-2" />
+                  <Chip name="XML" className="m-2" />
+                  <Chip name="MVP" className="m-2" />
+                  <Chip name="Banking" className="m-2" />
+                </div>
+              </div>
+            </Card>
+
+            <Card className="grid group p-4">
+              <div className="">
+                <p className="font-medium uppercase tracking-wide text-sm">
+                  Sept 2021 — Jan 2022
+                </p>
+                <a
+                  className="font-thin hover:text-cyan-500 flex items-center w-max"
+                  href="https://www.itsector.pt/"
+                >
+                  <p>IT Sector</p>
+                  <ShareIcon />
+                </a>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-thin text-lg group-hover:text-cyan-500">
+                  Professional Internship
+                </p>
+                <p className="font-thin text-sm mt-4">
+                  Develop an Android module utilizing image recognition
+                  technology to detect and translate information from receipts
+                  into user-friendly input fields within the application.
+                </p>
+                <div className="flex flex-wrap mt-4 ">
+                  <Chip name="Kotlin" className="m-2" />
+                  <Chip name="Optical Character Recognition" className="m-2" />
+                  <Chip name="Android" className="m-2" />
+                  <Chip name="Banking" className="m-2" />
+                </div>
               </div>
             </Card>
           </section>
@@ -142,59 +241,56 @@ export default function Home() {
           <section id="projects" ref={projectsRef}>
             <h1>Projects</h1>
             <p>
-              he standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum." Section 1.10.32 of
-              "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed
-              ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-              vel eum iure reprehenderit qui in ea voluptate velit esse quam
-              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-              voluptas nulla pariatur?" 1914 translation by H. Rackham "But I
-              must explain to you how all this mistaken idea of denouncing
-              pleasure and praising pain was born and I will give you a complete
-              account of the system, and expound the actual teachings of the
-              great explorer of the truth, the master-builder of human
-              happiness. No one rejects, dislikes, or avoids pleasure itself,
-              because it is pleasure, but because those who do not know how to
-              pursue pleasure rationally encounter consequences that are
-              extremely painful. Nor again is there anyone who loves or pursues
-              or desires to obtain pain of itself, because it is pain, but
-              because occasionally circumstances occur in which toil and pain
-              can procure him some great pleasure. To take a trivial example,
-              which of us ever undertakes laborious physical exercise, except to
-              obtain some advantage from it? But who has any right to find fault
-              with a man who chooses to enjoy a pleasure that has no annoying
-              consequences, or one who avoids a pain that produces no resultant
-              pleasure?" Section 1.10.33 of "de Finibus Bonorum et Malorum",
-              written by Cicero in 45 BC "At vero eos et accusamus et iusto odio
-              dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-              atque corrupti quos dolores et quas molestias excepturi sint
-              occaecati cupiditate non provident, similique sunt in culpa qui
-              officia deserunt mollitia animi, id est laborum et dolorum fuga.
-              Et harum quidem rerum facilis est et expedita distinctio. Nam
-              libero tempore, cum soluta nobis est eligendi optio cumque nihil
-              impedit quo minus id quod maxime placeat facere possimus, omnis
-              voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-              quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-              eveniet ut et voluptates repudiandae sint et molestiae non
-              recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut
-              aut reiciendis voluptatibus maiores alias consequatur aut
-              perferendis doloribus asperiores repellat."
+              Contrary to popular belief, Lorem Ipsum is not simply random text.
+              It has roots in a piece of classical Latin literature from 45 BC,
+              making it over 2000 years old. Richard McClintock, a Latin
+              professor at Hampden-Sydney College in Virginia, looked up one of
+              the more obscure Latin words, consectetur, from a Lorem Ipsum
+              passage, and going through the cites of the word in classical
+              literature, discovered the undoubtable source. Lorem Ipsum comes
+              from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+              Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
+              BC. This book is a treatise on the theory of ethics, very popular
+              during the Renaissance. The first line of Lorem Ipsum, "Lorem
+              ipsum dolor sit amet..", comes from a line in section 1.10.32. The
+              standard chunk of Lorem Ipsum used since the 1500s is reproduced
+              below for those interested. Sections 1.10.32 and 1.10.33 from "de
+              Finibus Bonorum et Malorum" by Cicero are also reproduced in their
+              exact original form, accompanied by English versions from the 1914
+              translation by H. Rackham. Contrary to popular belief, Lorem Ipsum
+              is not simply random text. It has roots in a piece of classical
+              Latin literature from 45 BC, making it over 2000 years old.
+              Richard McClintock, a Latin professor at Hampden-Sydney College in
+              Virginia, looked up one of the more obscure Latin words,
+              consectetur, from a Lorem Ipsum passage, and going through the
+              cites of the word in classical literature, discovered the
+              undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+              1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good
+              and Evil) by Cicero, written in 45 BC. This book is a treatise on
+              the theory of ethics, very popular during the Renaissance. The
+              first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes
+              from a line in section 1.10.32. The standard chunk of Lorem Ipsum
+              used since the 1500s is reproduced below for those interested.
+              Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"
+              by Cicero are also reproduced in their exact original form,
+              accompanied by English versions from the 1914 translation by H.
+              Rackham. Contrary to popular belief, Lorem Ipsum is not simply
+              random text. It has roots in a piece of classical Latin literature
+              from 45 BC, making it over 2000 years old. Richard McClintock, a
+              Latin professor at Hampden-Sydney College in Virginia, looked up
+              one of the more obscure Latin words, consectetur, from a Lorem
+              Ipsum passage, and going through the cites of the word in
+              classical literature, discovered the undoubtable source. Lorem
+              Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
+              Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
+              written in 45 BC. This book is a treatise on the theory of ethics,
+              very popular during the Renaissance. The first line of Lorem
+              Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
+              section 1.10.32. The standard chunk of Lorem Ipsum used since the
+              1500s is reproduced below for those interested. Sections 1.10.32
+              and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+              also reproduced in their exact original form, accompanied by
+              English versions from the 1914 translation by H. Rackham.
             </p>
           </section>
         </main>
